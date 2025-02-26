@@ -1,0 +1,27 @@
+<h1>New Entry for <%= @place.name %></h1>
+
+<form action="/entries" method="POST">
+  <!-- Hidden field for the place_id foreign key -->
+  <input type="hidden" name="query_place_id" value="<%= @place.id %>" />
+
+  <p>
+    <label for="title_field">Title:</label><br>
+    <input type="text" id="title_field" name="query_title">
+  </p>
+
+  <p>
+    <label for="desc_field">Description:</label><br>
+    <textarea id="desc_field" name="query_description"></textarea>
+  </p>
+
+  <p>
+    <label for="date_field">Date:</label><br>
+    <input type="date" id="date_field" name="query_posted_on">
+  </p>
+
+  <button type="submit">Create Entry</button>
+</form>
+
+<p>
+  <%= link_to "Back to #{@place.name}", "/places/#{@place.id}" %>
+</p>

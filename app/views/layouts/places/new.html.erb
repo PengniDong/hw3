@@ -1,0 +1,12 @@
+<h1>New Place</h1>
+
+<form action="/places" method="POST">
+  <label for="place_name">Place Name:</label><br>
+  <input id="place_name" type="text" name="place_name" /><br><br>
+
+  <button type="submit">Create Place</button>
+</form>
+
+<p>
+  <%= link_to "Back to Places", "/places" %>
+</p>

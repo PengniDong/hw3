@@ -1,0 +1,26 @@
+<h1><%= @place.name %></h1>
+
+<p>
+  <!-- List the related entries -->
+  <strong>Things I Did Here:</strong>
+</p>
+<ul>
+  <% @entries.each do |entry| %>
+    <li>
+      <strong><%= entry.title %></strong><br />
+      <%= entry.posted_on %><br />
+      <%= entry.description %>
+    </li>
+    <br />
+  <% end %>
+</ul>
+
+<!-- Link to create a new entry for this place -->
+<p>
+  <%= link_to "Add New Entry", "/places/#{@place.id}/entries/new" %>
+</p>
+
+<!-- Link back to places index -->
+<p>
+  <%= link_to "Back to All Places", "/places" %>
+</p>
